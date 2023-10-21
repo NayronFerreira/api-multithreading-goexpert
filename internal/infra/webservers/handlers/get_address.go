@@ -20,9 +20,9 @@ type AddressHandle struct {
 	brasilcepDB database.BrasilCepInterface
 }
 
-func NewAddressHandle(configSecrtes config.Config, viacepDB database.ViaCepInterface, brasilcepDB database.BrasilCepInterface) AddressHandle {
+func NewAddressHandle(appConfig config.Config, viacepDB database.ViaCepInterface, brasilcepDB database.BrasilCepInterface) AddressHandle {
 	return AddressHandle{
-		config:      configSecrtes,
+		config:      appConfig,
 		viacepDB:    viacepDB,
 		brasilcepDB: brasilcepDB,
 	}

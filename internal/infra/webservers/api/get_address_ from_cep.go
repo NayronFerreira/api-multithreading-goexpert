@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"sync"
-	"time"
 
 	"github.com/NayronFerreira/api-multithreading-goexpert/internal/model"
 )
@@ -18,11 +17,6 @@ func GetAddressFromCEP(channel chan interface{}, resHandle http.ResponseWriter, 
 		log.Println("Falha ao montar request para viacep:", err)
 		http.Error(resHandle, err.Error(), http.StatusInternalServerError)
 		return
-	}
-
-	//TODO: remove validation after testing.
-	if !isAPIBrasil {
-		time.Sleep(time.Millisecond * 15)
 	}
 
 	res, err := http.DefaultClient.Do(req)
