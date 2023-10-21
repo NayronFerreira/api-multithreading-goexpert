@@ -1,10 +1,13 @@
 package model
 
+import "github.com/NayronFerreira/api-multithreading-goexpert/pkg/model"
+
 type BrasilCepRes struct {
-	Cep          string `json:"cep"`
-	State        string `json:"state"`
-	City         string `json:"city"`
-	Neighborhood string `json:"neighborhood"`
-	Street       string `json:"street"`
-	Service      string `json:"service"`
+	Id           model.ID `json:"id"`
+	Cep          string   `json:"cep"`
+	State        string   `json:"state"`
+	City         string   `json:"city"`
+	Neighborhood string   `json:"neighborhood"`
+	Street       string   `json:"street"`
+	Service      string   `json:"service"`
 }

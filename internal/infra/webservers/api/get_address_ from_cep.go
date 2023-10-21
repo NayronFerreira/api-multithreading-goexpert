@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"sync"
 
+	modelID "github.com/NayronFerreira/api-multithreading-goexpert/pkg/model"
+
 	"github.com/NayronFerreira/api-multithreading-goexpert/internal/model"
 )
 
@@ -43,6 +45,7 @@ func GetAddressFromCEP(channel chan interface{}, resHandle http.ResponseWriter, 
 			http.Error(resHandle, err.Error(), http.StatusInternalServerError)
 			return
 		}
+		cepBrasil.Id = modelID.NewID()
 		channel <- cepBrasil
 
 	} else {
@@ -52,6 +55,7 @@ func GetAddressFromCEP(channel chan interface{}, resHandle http.ResponseWriter, 
 			http.Error(resHandle, err.Error(), http.StatusInternalServerError)
 			return
 		}
+		cepVia.Id = modelID.NewID()
 		channel <- cepVia
 	}
 
