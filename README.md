@@ -12,6 +12,7 @@ VIACEP_HOST_API=https://viacep.com.br/ws/
 BRASILCEP_HOST_API=https://brasilapi.com.br/api/cep/v1/
 DB_FILE_PATH=./internal/infra/database/database.db
 ```
+Os valores das variáveis de ambiente VIACEP_HOST_API e BRASILCEP_HOST_API são obrigatórios e devem ser os fornecidos acima (a menos que essas URLs sofram alterações externas). Por outro lado, as variáveis WEB_SERVER_PORT e DB_FILE_PATH podem ser definidas conforme a preferência do usuário.
 
 ### Iniciando a Aplicação
 
